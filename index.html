@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+    <!-- Replace the content tag with appropriate information -->
+    <meta name="description"
+        content="Project page of the paper <DeVI: Physics-based Dexterous Human-Object Interaction via Synthetic Video Imitation">
+    <meta property=" og:title"
+        content="DeVI: Physics-based Dexterous Human-Object Interaction via Synthetic Video Imitation" />
+    <meta property="og:description"
+        content="We present VMP, the first approach to leverage video generator as a HOI-aware motion planner to simulate human motions including dexterous HOI." />
+    <meta property="og:url" content="https://snuvclab.github.io/vmp/" />
+    <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+    <meta property="og:image" content="static/images/teaser.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+
+    <meta name="twitter:title"
+        content="DeVI: Physics-based Dexterous Human-Object Interaction via Synthetic Video Imitation">
+    <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+    <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+    <meta name="twitter:image" content="static/images/teaser.png">
+    <meta name="twitter:card" content="static/images/teaser.png">
+    <!-- Keywords for your paper to be indexed by-->
+    <meta name="keywords" content="Affordance, Human-Object Interaction, Diffusion Models">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <title>VMP</title>
+    <link rel="icon" type="image/x-icon" href="static/images/dynamic_affordance.ico">
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/bulma.min.css">
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="static/css/index.css">
+    <link rel="stylesheet" href="static/js/video-comparison.js">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+    <script defer src="static/js/fontawesome.all.min.js"></script>
+    <script src="static/js/bulma-carousel.min.js"></script>
+    <script src="static/js/bulma-slider.min.js"></script>
+    <script src="static/js/index.js"></script>
+    <script src="static/js/video-comparison.js"></script>
+</head>
+
+<body>
+
+
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1 class="title is-1 publication-title">DeVI: Physics-based Dexterous Human-Object Interaction via Synthetic Video Imitation</h1>
+                        <div class="is-size-5 publication-authors">
+                            <!-- Paper authors -->
+                            <span class="author-block">
+                                <a href="https://www.sshowbiz.xyz/" target="_blank">Hyeonwoo Kim</a><sup>1</sup>,
+                            </span>
+                            <span class="author-block">
+                                <a href="https://canoneod.github.io/" target="_blank">Jeonghwan Kim</a><sup>1</sup>,
+                            </span>
+                            <span class="author-block">
+                                <a href="https://kyungwoncho.github.io/" target="_blank">Kyungwon Cho</a><sup>1</sup>,
+                            </span>
+                            <span class="author-block">
+                                <a href="https://jhugestar.github.io/" target="_blank">Hanbyul Joo</a><sup>1</sup>
+                            </span>
+                        </div>
+
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block">Seoul National University<sup>1</sup></span>
+                        </div>
+                        <div class="columns is-centered">
+                            <div class="is-size-4 publication-venue">Preprint
+                            </div>
+                        </div>
+
+                        <div class="column has-text-centered">
+                            <div class="publication-links">
+                                <!-- Paper link -->
+                                <span class="link-block">
+                                    <a href="https://arxiv.org/pdf/2501.08333" target="_blank"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fas fa-file-pdf"></i>
+                                        </span>
+                                        <span>Paper</span>
+                                    </a>
+                                </span>
+
+                                <!-- Github link -->
+                                <span class="link-block">
+                                    <a href="https://github.com/snuvclab/vmp" target="_blank"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fab fa-github"></i>
+                                        </span>
+                                        <span>Code</span>
+                                    </a>
+                                </span>
+
+                                <!-- ArXiv link -->
+                                <span class="link-block">
+                                    <a href="https://arxiv.org/abs/2501.08333" target="_blank"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="ai ai-arxiv"></i>
+                                        </span>
+                                        <span>arXiv</span>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="hero teaser">
+        <div class="container is-max-desktop">
+            <div class="hero-image">
+                <img src="static/images/teaser.png" alt="Random Image" id="tree" width="100%">
+            </div>
+        </div>
+        </br>
+        <div class="container is-max-desktop">
+            <div class="hero-body">
+                <h2 class="subtitle has-text-centered">
+                    Given a physics environment with 3D human and objects along with an interaction text prompt, VMP generates a physically plausible human-object interaction motion by using a video diffusion model as an interaction-aware motion planner.
+                </h2>
+            </div>
+        </div>
+    </section>
+
+    <section class="hero is-light">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <br>
+                    <h2 class="title is-3">Abstract</h2>
+                    <div class="content has-text-justified">
+                        <p>
+                            Recent advances in video generative models enable the synthesis of realistic human-object interaction videos across a wide range of scenarios and object categories. While the human-object interaction knowledge embedded in these synthetic videos shows potential for motion planning in robotic manipulation, their limited physical fidelity and purely 2D nature make them difficult to use directly as imitation targets. We present VMP (Video as a Motion Planner), a novel framework leveraging text-conditioned synthetic videos to enable physically plausible agent control for interacting with unseen target objects. To address the imprecision of generative 2D cues, we introduce a hybrid tracking reward that integrates 3D human tracking with robust 2D object tracking. Unlike methods that depend on high-quality 3D kinematic demonstrations, our VMP relies solely on the generated video, enabling zero-shot generalizations across diverse objects and interaction types. Extensive experiments demonstrate that VMP outperforms existing approaches that imitate 3D human-object interaction demonstrations, particularly in modeling dexterous hand-object interactions. We further demonstrate the effectiveness of VMP in multi-object scenes and text-driven action diversity, highlighting the advantage of using video as an HOI-aware motion planner.
+                        </p>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Method Overview -->
+    <section class="hero is-small">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <h2 class="title is-3 has-text-centered">Method Overview</h2>
+                <img src="static/images/overview.png" alt="Random Image" id="tree" height="100%">
+                </br>
+                </br>
+                <h2 class="subtitle has-text-centered">
+                    Our method consists of three parts; <b>(1) 2D HOI Video Generation</b>,
+                    <b>(2) Extracting Hybrid Imitation Targets from the Video</b>, and 
+                    <b>(3) Learning Humanoid Control Policy</b>.
+                    First, we generate 2D HOI Video from the rendered 3D scene using the pre-trained image-to-video diffusion model.
+                    pipeline. Then, the Hybrid Imitation Targets which includes 3D human reference and 2D object reference is extracted from the video.
+                    Using the hybrid imitation targets, we learn humanoid control policy imitating the video via our hybrid tracking reward.
+                </h2>
+            </div>
+        </div>
+    </section>
+    <!-- Video -->
+    <!-- <section class="hero is-small is-light">
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns is-centered has-text-centered">
+                    <div class="column is-four-fifths">
+                        <h2 class="title is-3">Video</h2>
+                        <div class="publication-video"> 
+                            <iframe width="100%" height="450" src=""
+                                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <section class="hero is-small"></section>
+    <div class="hero-body">
+        <!-- <div class="container"> -->
+        <div class="container is-max-desktop content">
+            <h2 class="title is-3 has-text-centered">Results</h2>
+            <br />
+            <h4 align="left" class="title is-4">Various Simulated HOIs </h4>
+            <!-- <div id="results-carousel" class="carousel results-carousel">
+                <div class="item">
+                    <video poster="" id="trophy" autoplay controls muted loop playsinline>\
+                        <source src="./static/videos/trophy.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="item">
+                    <video poster="" id="camera" autoplay controls muted loop playsinline>
+                        <source src="./static/videos/camera.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="item">
+                    <video poster="" id="coke" autoplay controls muted loop playsinline>
+                        <source src="./static/videos/coke.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="item">
+                    <video poster="" id="pot" autoplay controls muted loop playsinline>\
+                        <source src="./static/videos/pot.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="item">
+                    <video poster="" id="garbage" autoplay controls muted loop playsinline>\
+                        <source src="./static/videos/garbage.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="item">
+                    <video poster="" id="pringles" autoplay controls muted loop playsinline>\
+                        <source src="./static/videos/pringles.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div> -->
+            <div class="row">
+                <div class="col">
+                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
+                        <video class="video" width=100% id="stool_hoi" loop playsinline autoplay muted
+                            src="./static/videos/trophy.mp4" onplay="resizeAndPlay(this)"></video>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
+                        <video class="video" width=100% id="stool_hoi" loop playsinline autoplay muted
+                            src="./static/videos/camera.mp4" onplay="resizeAndPlay(this)"></video>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
+                        <video class="video" width=100% id="stool_hoi" loop playsinline autoplay muted
+                            src="./static/videos/coke.mp4" onplay="resizeAndPlay(this)"></video>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
+                        <video class="video" width=100% id="stool_hoi" loop playsinline autoplay muted
+                            src="./static/videos/wok.mp4" onplay="resizeAndPlay(this)"></video>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p class="has-text-centered"> Trophy
+                    </p>
+                </div>
+                <div class="col">
+                    <p class="has-text-centered"> Camera </p>
+                </div>
+                <div class="col">
+                    <p class="has-text-centered"> Coke</p>
+                </div>
+                <div class="col">
+                    <p class="has-text-centered"> Wok</p>
+                </div>
+            </div>
+
+            <div class="row"> 
+                <div class="col">
+                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
+                        <video class="video" width=100% id="stool_hoi" loop playsinline autoplay muted
+                            src="./static/videos/strawhat.mp4" onplay="resizeAndPlay(this)"></video>
+                    </div>
+                </div> 
+                <div class="col">
+                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
+                        <video class="video" width=100% id="stool_hoi" loop playsinline autoplay muted
+                            src="./static/videos/garbage.mp4" onplay="resizeAndPlay(this)"></video>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
+                        <video class="video" width=100% id="stool_hoi" loop playsinline autoplay muted
+                            src="./static/videos/pot.mp4" onplay="resizeAndPlay(this)"></video>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
+                        <video class="video" width=100% id="stool_hoi" loop playsinline autoplay muted
+                            src="./static/videos/cactus.mp4" onplay="resizeAndPlay(this)"></video>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p class="has-text-centered"> Straw Hat</p>
+                </div>
+                <div class="col">
+                    <p class="has-text-centered"> Garbage </p>
+                </div>
+                <div class="col">
+                    <p class="has-text-centered"> Pot</p>
+                </div>
+                <div class="col">
+                    <p class="has-text-centered"> Potted Plant </p>
+                </div>
+            </div>
+            <br />
+            <br />
+            <!-- <h4 align="left" class="title is-4">Target Awareness </h4>
+            <div class="row">
+                <div class="col">
+                    <div class="video-compare-container" style="width: 50%"> 
+                        <video class="video" width=100% id="stool_hoi" loop playsinline autoplay muted
+                            src="./static/videos/lid.mp4" onplay="resizeAndPlay(this)"></video>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="video-compare-container" style="width: 50%">
+                        <video class="video" width=100% id="stool_hoi" loop playsinline autoplay muted
+                            src="./static/videos/fryingpan.mp4" onplay="resizeAndPlay(this)"></video>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p class="has-text-centered">A person jumps, &lt;umbrella&gt;
+                    </p>
+                </div>
+                <div class="col">
+                    <p class="has-text-centered">A person walks, &lt;suitcase&gt;</p>
+                </div>
+            </div>
+            <br />
+            <br /> -->
+            <h4 align="left" class="title is-4">Target Awareness & Text Controllability </h4>
+            <div class="row">
+                <div class="col">
+                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; "> 
+                        <video class="video" width=100% id="stool_hoi" loop playsinline autoplay muted
+                            src="./static/videos/lid.mp4" onplay="resizeAndPlay(this)"></video>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
+                        <video class="video" width=100% id="stool_hoi" loop playsinline autoplay muted
+                            src="./static/videos/fryingpan.mp4" onplay="resizeAndPlay(this)"></video>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
+                        <video class="video" width=100% id="stool_hoi" loop playsinline autoplay muted
+                            src="./static/videos/apple.mp4" onplay="resizeAndPlay(this)"></video>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; "> 
+                        <video class="video" width=100% id="stool_hoi" loop playsinline autoplay muted
+                            src="./static/videos/tomato.mp4" onplay="resizeAndPlay(this)"></video>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p class="has-text-centered" style="font-size: 12px;">"Lifts a pot lid with right hand and places it onto the pot to close it"
+                    </p>
+                </div>
+                <div class="col">
+                    <p class="has-text-centered" style="font-size: 12px;">"Lifts a frying pan with right hand and places it onto the induction"
+                    </p>
+                </div>
+                <div class="col">
+                    <p class="has-text-centered" style="font-size: 12px;">"Picks up an apple with left hand and places into a brown basket"
+                    </p>
+                </div>
+                <div class="col">
+                    <p class="has-text-centered" style="font-size: 12px;">"Picks up a tomato with right hand and places into a brown basket"
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </section>
+
+
+    <!-- BibTeX -->
+    <section class="section" id="BibTeX">
+        <div class="container is-max-desktop content">
+            <h2 class="title">BibTeX</h2>
+            <pre><code>coming soon!</code></pre>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-8">
+                    <div class="content">
+                        <p>
+                            This page was built using the <a
+                                href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                                target="_blank">Academic Project Page Template</a> which was adopted from the <a
+                                href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+                            You are free to borrow the of this website, we just ask that you link back to this page in
+                            the footer.
+                            <br> This website is licensed under a <a rel="license"
+                                href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+                                Commons Attribution-ShareAlike 4.0 International License</a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
