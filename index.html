@@ -30,7 +30,7 @@
 
 
     <title>VMP</title>
-    <link rel="icon" type="image/x-icon" href="static/images/dynamic_affordance.ico">
+    <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="static/css/bulma.min.css">
@@ -39,6 +39,11 @@
     <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
     <link rel="stylesheet" href="static/css/index.css">
+    <style>
+        .tight-row { margin-left: -4px; margin-right: -4px; }
+        .tight-row > [class*="col"] { padding-left: 4px; padding-right: 4px; }
+        .tight-row .video-compare-container { margin-bottom: 4px !important; }
+    </style>
     <link rel="stylesheet" href="static/js/video-comparison.js">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
@@ -57,7 +62,9 @@
             <div class="container is-max-desktop">
                 <div class="columns is-centered">
                     <div class="column has-text-centered">
-                        <h1 class="title is-1 publication-title">DeVI: Physics-based Dexterous Human-Object Interaction via Synthetic Video Imitation</h1>
+                        <h1 class="title is-1 publication-title" style="font-size: 2.5rem;"> 
+                            <img src="static/images/icon.png" alt="DeVI icon" style="height: 1em; vertical-align: -0.15em; margin-right: 0.25em;"><span style="color: #f2c94c;">DeVI</span>: Physics-based <span style="color: #f2c94c;">De</span>xterous Human-Object <br> Interaction via Synthetic <span style="color: #f2c94c;">V</span>ideo <span style="color: #f2c94c;">I</span>mitation
+                        </h1>
                         <div class="is-size-5 publication-authors">
                             <!-- Paper authors -->
                             <span class="author-block">
@@ -70,12 +77,12 @@
                                 <a href="https://kyungwoncho.github.io/" target="_blank">Kyungwon Cho</a><sup>1</sup>,
                             </span>
                             <span class="author-block">
-                                <a href="https://jhugestar.github.io/" target="_blank">Hanbyul Joo</a><sup>1</sup>
+                                <a href="https://jhugestar.github.io/" target="_blank">Hanbyul Joo</a><sup>1,2</sup>
                             </span>
                         </div>
 
                         <div class="is-size-5 publication-authors">
-                            <span class="author-block">Seoul National University<sup>1</sup></span>
+                            <span class="author-block">Seoul National University<sup>1</sup>, RLWRLD<sup>2</sup></span>
                         </div>
                         <div class="columns is-centered">
                             <div class="is-size-4 publication-venue">Preprint
@@ -128,7 +135,9 @@
     <section class="hero teaser">
         <div class="container is-max-desktop">
             <div class="hero-image">
-                <img src="static/images/teaser.png" alt="Random Image" id="tree" width="100%">
+                <video width="100%" autoplay loop muted playsinline>
+                    <source src="static/videos/main/teaser_v2.mp4" type="video/mp4">
+                </video>
             </div>
         </div>
         </br>
@@ -149,7 +158,12 @@
                     <h2 class="title is-3">Abstract</h2>
                     <div class="content has-text-justified">
                         <p>
-                            Recent advances in video generative models enable the synthesis of realistic human-object interaction videos across a wide range of scenarios and object categories. While the human-object interaction knowledge embedded in these synthetic videos shows potential for motion planning in robotic manipulation, their limited physical fidelity and purely 2D nature make them difficult to use directly as imitation targets. We present VMP (Video as a Motion Planner), a novel framework leveraging text-conditioned synthetic videos to enable physically plausible agent control for interacting with unseen target objects. To address the imprecision of generative 2D cues, we introduce a hybrid tracking reward that integrates 3D human tracking with robust 2D object tracking. Unlike methods that depend on high-quality 3D kinematic demonstrations, our VMP relies solely on the generated video, enabling zero-shot generalizations across diverse objects and interaction types. Extensive experiments demonstrate that VMP outperforms existing approaches that imitate 3D human-object interaction demonstrations, particularly in modeling dexterous hand-object interactions. We further demonstrate the effectiveness of VMP in multi-object scenes and text-driven action diversity, highlighting the advantage of using video as an HOI-aware motion planner.
+                            Recent advances in video generative models enable the synthesis of realistic human-object interaction videos across a wide range of scenarios and object categories, including complex dexterous manipulations that are difficult to capture with motion capture systems. While the rich interaction knowledge embedded in these synthetic videos holds strong potential for motion planning in dexterous robotic manipulation, their limited physical fidelity and purely 2D nature make them difficult to use directly as imitation targets in physics-based character control.
+                            We present DeVI (Dexterous Video Imitation), a novel framework that leverages text-conditioned synthetic videos to enable physically plausible dexterous agent control for interacting with unseen target objects.
+                            To overcome the imprecision of generative 2D cues, we introduce a hybrid tracking reward that integrates 3D human tracking with robust 2D object tracking.
+                            Unlike methods relying on high-quality 3D kinematic demonstrations, DeVI requires only the generated video, enabling zero-shot generalization across diverse objects and interaction types.  
+                            Extensive experiments demonstrate that DeVI outperforms existing approaches that imitate 3D human-object interaction demonstrations, particularly in modeling dexterous hand-object interactions.
+                            We further validate the effectiveness of DeVI in multi-object scenes and text-driven action diversity, confirming the advantage of using video as an HOI-aware motion planner.
                         </p>
                         <br>
                     </div>
@@ -204,58 +218,58 @@
             <!-- <div id="results-carousel" class="carousel results-carousel">
                 <div class="item">
                     <video poster="" id="trophy" autoplay controls muted loop playsinline>\
-                        <source src="./static/videos/trophy.mp4" type="video/mp4">
+                        <source src="./static/videos/main/trophy.mp4" type="video/mp4">
                     </video>
                 </div>
                 <div class="item">
                     <video poster="" id="camera" autoplay controls muted loop playsinline>
-                        <source src="./static/videos/camera.mp4" type="video/mp4">
+                        <source src="./static/videos/main/camera.mp4" type="video/mp4">
                     </video>
                 </div>
                 <div class="item">
                     <video poster="" id="coke" autoplay controls muted loop playsinline>
-                        <source src="./static/videos/coke.mp4" type="video/mp4">
+                        <source src="./static/videos/main/coke.mp4" type="video/mp4">
                     </video>
                 </div>
                 <div class="item">
                     <video poster="" id="pot" autoplay controls muted loop playsinline>\
-                        <source src="./static/videos/pot.mp4" type="video/mp4">
+                        <source src="./static/videos/main/pot.mp4" type="video/mp4">
                     </video>
                 </div>
                 <div class="item">
                     <video poster="" id="garbage" autoplay controls muted loop playsinline>\
-                        <source src="./static/videos/garbage.mp4" type="video/mp4">
+                        <source src="./static/videos/main/garbage.mp4" type="video/mp4">
                     </video>
                 </div>
                 <div class="item">
                     <video poster="" id="pringles" autoplay controls muted loop playsinline>\
-                        <source src="./static/videos/pringles.mp4" type="video/mp4">
+                        <source src="./static/videos/main/pringles.mp4" type="video/mp4">
                     </video>
                 </div>
             </div> -->
-            <div class="row">
+            <div class="row tight-row">
                 <div class="col">
                     <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
                         <video class="video" width=100% id="stool_hoi" loop playsinline autoplay muted
-                            src="./static/videos/trophy.mp4" onplay="resizeAndPlay(this)"></video>
+                            src="./static/videos/main/trophy.mp4" onplay="resizeAndPlay(this)"></video>
                     </div>
                 </div>
                 <div class="col">
                     <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
                         <video class="video" width=100% id="stool_hoi" loop playsinline autoplay muted
-                            src="./static/videos/camera.mp4" onplay="resizeAndPlay(this)"></video>
+                            src="./static/videos/main/camera.mp4" onplay="resizeAndPlay(this)"></video>
                     </div>
                 </div>
                 <div class="col">
                     <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
                         <video class="video" width=100% id="stool_hoi" loop playsinline autoplay muted
-                            src="./static/videos/coke.mp4" onplay="resizeAndPlay(this)"></video>
+                            src="./static/videos/main/coke.mp4" onplay="resizeAndPlay(this)"></video>
                     </div>
                 </div>
                 <div class="col">
                     <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
                         <video class="video" width=100% id="stool_hoi" loop playsinline autoplay muted
-                            src="./static/videos/wok.mp4" onplay="resizeAndPlay(this)"></video>
+                            src="./static/videos/main/wok.mp4" onplay="resizeAndPlay(this)"></video>
                     </div>
                 </div>
             </div>
@@ -275,29 +289,29 @@
                 </div>
             </div>
 
-            <div class="row"> 
+            <div class="row tight-row">
                 <div class="col">
                     <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
                         <video class="video" width=100% id="stool_hoi" loop playsinline autoplay muted
-                            src="./static/videos/strawhat.mp4" onplay="resizeAndPlay(this)"></video>
+                            src="./static/videos/main/strawhat.mp4" onplay="resizeAndPlay(this)"></video>
                     </div>
                 </div> 
                 <div class="col">
                     <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
                         <video class="video" width=100% id="stool_hoi" loop playsinline autoplay muted
-                            src="./static/videos/garbage.mp4" onplay="resizeAndPlay(this)"></video>
+                            src="./static/videos/main/garbage.mp4" onplay="resizeAndPlay(this)"></video>
                     </div>
                 </div>
                 <div class="col">
                     <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
                         <video class="video" width=100% id="stool_hoi" loop playsinline autoplay muted
-                            src="./static/videos/pot.mp4" onplay="resizeAndPlay(this)"></video>
+                            src="./static/videos/main/pot.mp4" onplay="resizeAndPlay(this)"></video>
                     </div>
                 </div>
                 <div class="col">
                     <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
                         <video class="video" width=100% id="stool_hoi" loop playsinline autoplay muted
-                            src="./static/videos/cactus.mp4" onplay="resizeAndPlay(this)"></video>
+                            src="./static/videos/main/cactus.mp4" onplay="resizeAndPlay(this)"></video>
                     </div>
                 </div>
             </div>
@@ -322,13 +336,13 @@
                 <div class="col">
                     <div class="video-compare-container" style="width: 50%"> 
                         <video class="video" width=100% id="stool_hoi" loop playsinline autoplay muted
-                            src="./static/videos/lid.mp4" onplay="resizeAndPlay(this)"></video>
+                            src="./static/videos/main/lid.mp4" onplay="resizeAndPlay(this)"></video>
                     </div>
                 </div>
                 <div class="col">
                     <div class="video-compare-container" style="width: 50%">
                         <video class="video" width=100% id="stool_hoi" loop playsinline autoplay muted
-                            src="./static/videos/fryingpan.mp4" onplay="resizeAndPlay(this)"></video>
+                            src="./static/videos/main/fryingpan.mp4" onplay="resizeAndPlay(this)"></video>
                     </div>
                 </div>
             </div>
@@ -344,29 +358,29 @@
             <br />
             <br /> -->
             <h4 align="left" class="title is-4">Target Awareness & Text Controllability </h4>
-            <div class="row">
+            <div class="row tight-row">
                 <div class="col">
                     <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; "> 
                         <video class="video" width=100% id="stool_hoi" loop playsinline autoplay muted
-                            src="./static/videos/lid.mp4" onplay="resizeAndPlay(this)"></video>
+                            src="./static/videos/main/lid.mp4" onplay="resizeAndPlay(this)"></video>
                     </div>
                 </div>
                 <div class="col">
                     <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
                         <video class="video" width=100% id="stool_hoi" loop playsinline autoplay muted
-                            src="./static/videos/fryingpan.mp4" onplay="resizeAndPlay(this)"></video>
+                            src="./static/videos/main/fryingpan.mp4" onplay="resizeAndPlay(this)"></video>
                     </div>
                 </div>
                 <div class="col">
                     <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
                         <video class="video" width=100% id="stool_hoi" loop playsinline autoplay muted
-                            src="./static/videos/apple.mp4" onplay="resizeAndPlay(this)"></video>
+                            src="./static/videos/main/apple.mp4" onplay="resizeAndPlay(this)"></video>
                     </div>
                 </div>
                 <div class="col">
                     <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; "> 
                         <video class="video" width=100% id="stool_hoi" loop playsinline autoplay muted
-                            src="./static/videos/tomato.mp4" onplay="resizeAndPlay(this)"></video>
+                            src="./static/videos/main/tomato.mp4" onplay="resizeAndPlay(this)"></video>
                     </div>
                 </div>
             </div>
@@ -385,6 +399,98 @@
                 </div>
                 <div class="col">
                     <p class="has-text-centered" style="font-size: 12px;">"Picks up a tomato with right hand and places into a brown basket"
+                </div>
+            </div>
+            <br />
+            <br />
+            <h4 align="left" class="title is-4">Synthetic Imitation Target </h4>
+            <div class="row">
+                <div class="col">
+                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
+                        <video class="video" width=100% loop playsinline autoplay muted
+                            src="./static/videos/grid.mp4" onplay="resizeAndPlay(this)"></video>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <br />
+            <h4 align="left" class="title is-4">DeVI on GRAB dataset </h4>
+            <div class="row tight-row">
+                <div class="col">
+                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
+                        <video class="video" width=100% loop playsinline autoplay muted
+                            src="./static/videos/quant/s4_mouse_pass_1.mp4" onplay="resizeAndPlay(this)"></video>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
+                        <video class="video" width=100% loop playsinline autoplay muted
+                            src="./static/videos/quant/s5_toothpaste_pass_1.mp4" onplay="resizeAndPlay(this)"></video>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
+                        <video class="video" width=100% loop playsinline autoplay muted
+                            src="./static/videos/quant/s7_lightbulb_pass_1.mp4" onplay="resizeAndPlay(this)"></video>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
+                        <video class="video" width=100% loop playsinline autoplay muted
+                            src="./static/videos/quant/s7_spheremedium_pass_1.mp4" onplay="resizeAndPlay(this)"></video>
+                    </div>
+                </div>
+            </div>
+            <div class="row tight-row">
+                <div class="col">
+                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
+                        <video class="video" width=100% loop playsinline autoplay muted
+                            src="./static/videos/quant/s10_torusmedium_inspect_1.mp4" onplay="resizeAndPlay(this)"></video>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
+                        <video class="video" width=100% loop playsinline autoplay muted
+                            src="./static/videos/quant/s9_cubemedium_pass_1.mp4" onplay="resizeAndPlay(this)"></video>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
+                        <video class="video" width=100% loop playsinline autoplay muted
+                            src="./static/videos/quant/s9_cubesmall_inspect_1.mp4" onplay="resizeAndPlay(this)"></video>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
+                        <video class="video" width=100% loop playsinline autoplay muted
+                            src="./static/videos/quant/s10_waterbottle_pass_1.mp4" onplay="resizeAndPlay(this)"></video>
+                    </div>
+                </div>
+            </div>
+            <div class="row tight-row">
+                <div class="col">
+                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
+                        <video class="video" width=100% loop playsinline autoplay muted
+                            src="./static/videos/quant/s9_lightbulb_pass_1.mp4" onplay="resizeAndPlay(this)"></video>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
+                        <video class="video" width=100% loop playsinline autoplay muted
+                            src="./static/videos/quant/s10_headphones_pass_1.mp4" onplay="resizeAndPlay(this)"></video>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
+                        <video class="video" width=100% loop playsinline autoplay muted
+                            src="./static/videos/quant/s10_spheremedium_inspect_1.mp4" onplay="resizeAndPlay(this)"></video>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
+                        <video class="video" width=100% loop playsinline autoplay muted
+                            src="./static/videos/quant/s10_spheremedium_pass_1.mp4" onplay="resizeAndPlay(this)"></video>
+                    </div>
                 </div>
             </div>
 
