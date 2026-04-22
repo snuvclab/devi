@@ -159,11 +159,11 @@
                     <div class="content has-text-justified">
                         <p>
                             Recent advances in video generative models enable the synthesis of realistic human-object interaction videos across a wide range of scenarios and object categories, including complex dexterous manipulations that are difficult to capture with motion capture systems. While the rich interaction knowledge embedded in these synthetic videos holds strong potential for motion planning in dexterous robotic manipulation, their limited physical fidelity and purely 2D nature make them difficult to use directly as imitation targets in physics-based character control.
-                            We present DeVI (Dexterous Video Imitation), a novel framework that leverages text-conditioned synthetic videos to enable physically plausible dexterous agent control for interacting with unseen target objects.
-                            To overcome the imprecision of generative 2D cues, we introduce a hybrid tracking reward that integrates 3D human tracking with robust 2D object tracking.
-                            Unlike methods relying on high-quality 3D kinematic demonstrations, DeVI requires only the generated video, enabling zero-shot generalization across diverse objects and interaction types.  
-                            Extensive experiments demonstrate that DeVI outperforms existing approaches that imitate 3D human-object interaction demonstrations, particularly in modeling dexterous hand-object interactions.
-                            We further validate the effectiveness of DeVI in multi-object scenes and text-driven action diversity, confirming the advantage of using video as an HOI-aware motion planner.
+We present DeVI (Dexterous Video Imitation), a novel framework that leverages text-conditioned synthetic videos to enable physically plausible dexterous agent control for interacting with unseen target objects.
+To overcome the imprecision of generative 2D cues, we introduce a hybrid tracking reward that integrates 3D human tracking with robust 2D object tracking.
+Unlike methods relying on high-quality 3D kinematic demonstrations, DeVI requires only the generated video, enabling zero-shot generalization across diverse objects and interaction types.  
+Extensive experiments demonstrate that DeVI outperforms existing approaches that imitate 3D human-object interaction demonstrations, particularly in modeling dexterous hand-object interactions.
+We further validate the effectiveness of DeVI in multi-object scenes and text-driven action diversity, showcasing the advantage of using video as an HOI-aware motion planner.
                         </p>
                         <br>
                     </div>
@@ -182,11 +182,11 @@
                 </br>
                 <h2 class="subtitle has-text-centered">
                     Our method consists of three parts; <b>(1) 2D HOI Video Generation</b>,
-                    <b>(2) Extracting Hybrid Imitation Targets from the Video</b>, and 
+                    <b>(2) Extracting Hybrid Imitation Target from the Video</b>, and 
                     <b>(3) Learning Humanoid Control Policy</b>.
                     First, we generate 2D HOI Video from the rendered 3D scene using the pre-trained image-to-video diffusion model.
-                    pipeline. Then, the Hybrid Imitation Targets which includes 3D human reference and 2D object reference is extracted from the video.
-                    Using the hybrid imitation targets, we learn humanoid control policy imitating the video via our hybrid tracking reward.
+                    Then, the Hybrid Imitation Target which includes 3D human reference and 2D object reference is extracted from the video.
+                    Using the hybrid imitation target, we learn humanoid control policy imitating the dexterous HOI video via our hybrid tracking reward.
                 </h2>
             </div>
         </div>
