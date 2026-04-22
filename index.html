@@ -43,6 +43,8 @@
         .tight-row { margin-left: -4px; margin-right: -4px; }
         .tight-row > [class*="col"] { padding-left: 4px; padding-right: 4px; }
         .tight-row .video-compare-container { margin-bottom: 4px !important; }
+        .tldr-label { font-size: 1.1em; font-weight: 700 !important; }
+        .tldr-text { font-size: 0.92em; font-weight: 700 !important; }
     </style>
     <link rel="stylesheet" href="static/js/video-comparison.js">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -85,7 +87,7 @@
                             <span class="author-block">Seoul National University<sup>1</sup>, RLWRLD<sup>2</sup></span>
                         </div>
                         <div class="columns is-centered">
-                            <div class="is-size-4 publication-venue">Preprint
+                            <div class="is-size-4 publication-venue has-text-centered" style="margin-left: auto; margin-right: auto;">Preprint
                             </div>
                         </div>
 
@@ -139,15 +141,12 @@
                     <source src="static/videos/main/teaser_v2.mp4" type="video/mp4">
                 </video>
             </div>
+            <h2 class="subtitle has-text-centered" style="margin-bottom: 1.5rem;">
+                <span class="tldr-label">TL;DR:</span>
+                <span class="tldr-text">Physics-based character control with dexterous HOI <br/> via Synthetic Video Imitation</span>
+            </h2>
         </div>
-        </br>
-        <div class="container is-max-desktop">
-            <div class="hero-body">
-                <h2 class="subtitle has-text-centered">
-                    Given a physics environment with 3D human and objects along with an interaction text prompt, DeVI generates a physically plausible human-object interaction motion by using a video diffusion model as an interaction-aware motion planner.
-                </h2>
-            </div>
-        </div>
+
     </section>
 
     <section class="hero is-light">
