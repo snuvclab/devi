@@ -43,6 +43,10 @@
         .tight-row { margin-left: -4px; margin-right: -4px; }
         .tight-row > [class*="col"] { padding-left: 4px; padding-right: 4px; }
         .tight-row .video-compare-container { margin-bottom: 4px !important; }
+        /* Trim the side margins of a clip without changing how wide it is shown.
+           --keep is the fraction of the original frame width left visible. */
+        .crop-x { --keep: 0.70; overflow: hidden; }
+        .crop-x > video { width: calc(100% / var(--keep)); margin-left: calc(-50% * (1 / var(--keep) - 1)); max-width: none; }
         .tldr-label { font-size: 1.1em; font-weight: 700 !important; }
         .tldr-text { font-size: 0.92em; font-weight: 700 !important; }
     </style>
@@ -381,6 +385,60 @@ We further validate the effectiveness of DeVI in multi-object scenes and text-dr
             </div>
             <br />
             <br />
+            <h4 align="left" class="title is-4">Egocentric Video w/ Articulated Object Manipulation </h4>
+            <div style="display: flex; align-items: stretch; gap: 12px;">
+                <div style="flex: 1; min-width: 0;">
+                    <div class="row tight-row" style="align-items: center;">
+                        <div class="col">
+                            <div class="video-compare-container crop-x" style="width: 100%; margin-bottom: 8px; ">
+                                <video class="video" width=100% loop playsinline autoplay muted data-sync="microwave"
+                                    src="./static/videos/articulated/microwave_video.mp4"></video>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="video-compare-container crop-x" style="width: 100%; margin-bottom: 8px; ">
+                                <video class="video" width=100% loop playsinline autoplay muted data-sync="microwave" data-sync-lead
+                                    src="./static/videos/articulated/microwave_sim.mp4"></video>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <p class="has-text-centered"> Generated Egocentric Video</p>
+                        </div>
+                        <div class="col">
+                            <p class="has-text-centered"> Dexterous HOI Simulation</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="width: 1px; background: #ccc; align-self: stretch;"></div>
+                <div style="flex: 1; min-width: 0;">
+                    <div class="row tight-row" style="align-items: center;">
+                        <div class="col">
+                            <div class="video-compare-container crop-x" style="width: 100%; margin-bottom: 8px; ">
+                                <video class="video" width=100% loop playsinline autoplay muted data-sync="washingmachine"
+                                    src="./static/videos/articulated/washingmachine_video.mp4"></video>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="video-compare-container crop-x" style="width: 100%; margin-bottom: 8px; ">
+                                <video class="video" width=100% loop playsinline autoplay muted data-sync="washingmachine" data-sync-lead
+                                    src="./static/videos/articulated/washingmachine_sim.mp4"></video>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <p class="has-text-centered"> Generated Egocentric Video</p>
+                        </div>
+                        <div class="col">
+                            <p class="has-text-centered"> Dexterous HOI Simulation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <br />
             <h4 align="left" class="title is-4">DeVI on GRAB dataset </h4>
             <div class="row tight-row">
                 <div class="col">
@@ -479,7 +537,7 @@ We further validate the effectiveness of DeVI in multi-object scenes and text-dr
                             </div>
                         </div>
                     </div>
-                    <p class="has-text-centered" style="font-weight: 600;">Beyond the Table-top Scenarios</p>
+                    <p class="has-text-centered">Beyond the Table-top Scenarios</p>
                 </div>
                 <div style="width: 1px; background: #ccc; align-self: stretch;"></div>
                 <div style="flex: 1; min-width: 0;">
@@ -489,7 +547,6 @@ We further validate the effectiveness of DeVI in multi-object scenes and text-dr
                                 <img src="./static/images/scene_0.png" style="width: 100%; display: block;">
                             </div>
                         </div>
-                        <div class="col-auto" style="font-size: 20px; padding: 0 2px; font-weight: 600; line-height: 1;">&rarr;</div>
                         <div class="col">
                             <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
                                 <video class="video" width=100% loop playsinline autoplay muted
@@ -497,7 +554,7 @@ We further validate the effectiveness of DeVI in multi-object scenes and text-dr
                             </div>
                         </div>
                     </div>
-                    <p class="has-text-centered" style="font-weight: 600;">DeVI on Reconstructed Scene</p>
+                    <p class="has-text-centered">DeVI on Reconstructed Scene</p>
                 </div>
             </div>
 
@@ -510,7 +567,17 @@ We further validate the effectiveness of DeVI in multi-object scenes and text-dr
     <section class="section" id="BibTeX">
         <div class="container is-max-desktop content">
             <h2 class="title">BibTeX</h2>
-            <pre><code>coming soon!</code></pre>
+            <pre><code>
+@misc{devi,
+    title={DeVI: Physics-based Dexterous Human-Object Interaction via Synthetic Video Imitation}, 
+    author={Hyeonwoo Kim and Jeonghwan Kim and Kyungwon Cho and Hanbyul Joo},
+    year={2026},
+    eprint={2604.20841},
+    archivePrefix={arXiv},
+    primaryClass={cs.CV},
+    url={https://arxiv.org/abs/2604.20841}, 
+}
+            </code></pre>
         </div>
     </section>
 
