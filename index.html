@@ -50,14 +50,13 @@
         .tldr-label { font-size: 1.1em; font-weight: 700 !important; }
         .tldr-text { font-size: 0.92em; font-weight: 700 !important; }
     </style>
-    <link rel="stylesheet" href="static/js/video-comparison.js">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
     <script defer src="static/js/fontawesome.all.min.js"></script>
     <script src="static/js/bulma-carousel.min.js"></script>
     <script src="static/js/bulma-slider.min.js"></script>
     <script src="static/js/index.js"></script>
-    <script src="static/js/video-comparison.js"></script>
+    <script defer src="static/js/video-playback.js"></script>
 </head>
 
 <body>
@@ -141,7 +140,7 @@
     <section class="hero teaser">
         <div class="container is-max-desktop">
             <div class="hero-image">
-                <video width="100%" autoplay loop muted playsinline>
+                <video width="1920" height="486" data-autoplay controls preload="auto" loop muted playsinline>
                     <source src="static/videos/main/teaser_v2.mp4" type="video/mp4">
                 </video>
             </div>
@@ -221,26 +220,26 @@ We further validate the effectiveness of DeVI in multi-object scenes and text-dr
             <div class="row tight-row">
                 <div class="col">
                     <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                        <video class="video" width=100% id="stool_hoi" loop playsinline autoplay muted
-                            src="./static/videos/main/trophy.mp4" onplay="resizeAndPlay(this)"></video>
+                        <video class="video" width="960" height="960" loop playsinline data-autoplay controls preload="none" muted
+                            src="./static/videos/main/web/trophy.mp4"></video>
                     </div>
                 </div>
                 <div class="col">
                     <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                        <video class="video" width=100% id="stool_hoi" loop playsinline autoplay muted
-                            src="./static/videos/main/camera.mp4" onplay="resizeAndPlay(this)"></video>
+                        <video class="video" width="960" height="960" loop playsinline data-autoplay controls preload="none" muted
+                            src="./static/videos/main/web/camera.mp4"></video>
                     </div>
                 </div>
                 <div class="col">
                     <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                        <video class="video" width=100% id="stool_hoi" loop playsinline autoplay muted
-                            src="./static/videos/main/coke.mp4" onplay="resizeAndPlay(this)"></video>
+                        <video class="video" width="960" height="960" loop playsinline data-autoplay controls preload="none" muted
+                            src="./static/videos/main/web/coke.mp4"></video>
                     </div>
                 </div>
                 <div class="col">
                     <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                        <video class="video" width=100% id="stool_hoi" loop playsinline autoplay muted
-                            src="./static/videos/main/apple.mp4" onplay="resizeAndPlay(this)"></video>
+                        <video class="video" width="960" height="960" loop playsinline data-autoplay controls preload="none" muted
+                            src="./static/videos/main/web/apple.mp4"></video>
                     </div>
                 </div>
             </div>
@@ -263,26 +262,26 @@ We further validate the effectiveness of DeVI in multi-object scenes and text-dr
             <div class="row tight-row">
                 <div class="col">
                     <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                        <video class="video" width=100% id="stool_hoi" loop playsinline autoplay muted
-                            src="./static/videos/main/wok.mp4" onplay="resizeAndPlay(this)"></video>
+                        <video class="video" width="960" height="960" loop playsinline data-autoplay controls preload="none" muted
+                            src="./static/videos/main/web/wok.mp4"></video>
                     </div>
                 </div> 
                 <div class="col">
                     <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                        <video class="video" width=100% id="stool_hoi" loop playsinline autoplay muted
-                            src="./static/videos/main/garbage.mp4" onplay="resizeAndPlay(this)"></video>
+                        <video class="video" width="960" height="960" loop playsinline data-autoplay controls preload="none" muted
+                            src="./static/videos/main/web/garbage.mp4"></video>
                     </div>
                 </div>
                 <div class="col">
                     <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                        <video class="video" width=100% id="stool_hoi" loop playsinline autoplay muted
-                            src="./static/videos/main/pot.mp4" onplay="resizeAndPlay(this)"></video>
+                        <video class="video" width="960" height="960" loop playsinline data-autoplay controls preload="none" muted
+                            src="./static/videos/main/web/pot.mp4"></video>
                     </div>
                 </div>
                 <div class="col">
                     <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                        <video class="video" width=100% id="stool_hoi" loop playsinline autoplay muted
-                            src="./static/videos/main/cactus.mp4" onplay="resizeAndPlay(this)"></video>
+                        <video class="video" width="960" height="960" loop playsinline data-autoplay controls preload="none" muted
+                            src="./static/videos/main/web/cactus.mp4"></video>
                     </div>
                 </div>
             </div>
@@ -332,26 +331,26 @@ We further validate the effectiveness of DeVI in multi-object scenes and text-dr
             <div class="row tight-row">
                 <div class="col">
                     <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; "> 
-                        <video class="video" width=100% id="stool_hoi" loop playsinline autoplay muted
-                            src="./static/videos/main/lid.mp4" onplay="resizeAndPlay(this)"></video>
+                        <video class="video" width="960" height="872" loop playsinline data-autoplay controls preload="none" muted
+                            src="./static/videos/main/web/lid.mp4"></video>
                     </div>
                 </div>
                 <div class="col">
                     <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                        <video class="video" width=100% id="stool_hoi" loop playsinline autoplay muted
-                            src="./static/videos/main/fryingpan.mp4" onplay="resizeAndPlay(this)"></video>
+                        <video class="video" width="960" height="872" loop playsinline data-autoplay controls preload="none" muted
+                            src="./static/videos/main/web/fryingpan.mp4"></video>
                     </div>
                 </div>
                 <div class="col">
                     <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                        <video class="video" width=100% id="stool_hoi" loop playsinline autoplay muted
-                            src="./static/videos/main/apple_text.mp4" onplay="resizeAndPlay(this)"></video>
+                        <video class="video" width="960" height="872" loop playsinline data-autoplay controls preload="none" muted
+                            src="./static/videos/main/web/apple_text.mp4"></video>
                     </div>
                 </div>
                 <div class="col">
                     <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; "> 
-                        <video class="video" width=100% id="stool_hoi" loop playsinline autoplay muted
-                            src="./static/videos/main/tomato.mp4" onplay="resizeAndPlay(this)"></video>
+                        <video class="video" width="960" height="872" loop playsinline data-autoplay controls preload="none" muted
+                            src="./static/videos/main/web/tomato.mp4"></video>
                     </div>
                 </div>
             </div>
@@ -378,8 +377,8 @@ We further validate the effectiveness of DeVI in multi-object scenes and text-dr
             <div class="row">
                 <div class="col">
                     <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                        <video class="video" width=100% loop playsinline autoplay muted
-                            src="./static/videos/grid.mp4" onplay="resizeAndPlay(this)"></video>
+                        <video class="video" width="1920" height="1044" loop playsinline data-autoplay controls preload="none" muted
+                            src="./static/videos/grid.mp4"></video>
                     </div>
                 </div>
             </div>
@@ -391,13 +390,13 @@ We further validate the effectiveness of DeVI in multi-object scenes and text-dr
                     <div class="row tight-row" style="align-items: center;">
                         <div class="col">
                             <div class="video-compare-container crop-x" style="width: 100%; margin-bottom: 8px; ">
-                                <video class="video" width=100% loop playsinline autoplay muted data-sync="microwave"
+                                <video class="video" width="1024" height="576" loop playsinline data-autoplay controls preload="none" muted data-sync="microwave"
                                     src="./static/videos/articulated/microwave_video.mp4"></video>
                             </div>
                         </div>
                         <div class="col">
                             <div class="video-compare-container crop-x" style="width: 100%; margin-bottom: 8px; ">
-                                <video class="video" width=100% loop playsinline autoplay muted data-sync="microwave" data-sync-lead
+                                <video class="video" width="1024" height="576" loop playsinline data-autoplay controls preload="none" muted data-sync="microwave" data-sync-lead
                                     src="./static/videos/articulated/microwave_sim.mp4"></video>
                             </div>
                         </div>
@@ -416,13 +415,13 @@ We further validate the effectiveness of DeVI in multi-object scenes and text-dr
                     <div class="row tight-row" style="align-items: center;">
                         <div class="col">
                             <div class="video-compare-container crop-x" style="width: 100%; margin-bottom: 8px; ">
-                                <video class="video" width=100% loop playsinline autoplay muted data-sync="washingmachine"
+                                <video class="video" width="1024" height="576" loop playsinline data-autoplay controls preload="none" muted data-sync="washingmachine"
                                     src="./static/videos/articulated/washingmachine_video.mp4"></video>
                             </div>
                         </div>
                         <div class="col">
                             <div class="video-compare-container crop-x" style="width: 100%; margin-bottom: 8px; ">
-                                <video class="video" width=100% loop playsinline autoplay muted data-sync="washingmachine" data-sync-lead
+                                <video class="video" width="1024" height="576" loop playsinline data-autoplay controls preload="none" muted data-sync="washingmachine" data-sync-lead
                                     src="./static/videos/articulated/washingmachine_sim.mp4"></video>
                             </div>
                         </div>
@@ -443,78 +442,78 @@ We further validate the effectiveness of DeVI in multi-object scenes and text-dr
             <div class="row tight-row">
                 <div class="col">
                     <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                        <video class="video" width=100% loop playsinline autoplay muted
-                            src="./static/videos/quant/s4_mouse_pass_1.mp4" onplay="resizeAndPlay(this)"></video>
+                        <video class="video" width="784" height="576" loop playsinline data-autoplay controls preload="none" muted
+                            src="./static/videos/quant/s4_mouse_pass_1.mp4"></video>
                     </div>
                 </div>
                 <div class="col">
                     <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                        <video class="video" width=100% loop playsinline autoplay muted
-                            src="./static/videos/quant/s5_toothpaste_pass_1.mp4" onplay="resizeAndPlay(this)"></video>
+                        <video class="video" width="784" height="576" loop playsinline data-autoplay controls preload="none" muted
+                            src="./static/videos/quant/s5_toothpaste_pass_1.mp4"></video>
                     </div>
                 </div>
                 <div class="col">
                     <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                        <video class="video" width=100% loop playsinline autoplay muted
-                            src="./static/videos/quant/s7_lightbulb_pass_1.mp4" onplay="resizeAndPlay(this)"></video>
+                        <video class="video" width="784" height="576" loop playsinline data-autoplay controls preload="none" muted
+                            src="./static/videos/quant/s7_lightbulb_pass_1.mp4"></video>
                     </div>
                 </div>
                 <div class="col">
                     <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                        <video class="video" width=100% loop playsinline autoplay muted
-                            src="./static/videos/quant/s7_spheremedium_pass_1.mp4" onplay="resizeAndPlay(this)"></video>
-                    </div>
-                </div>
-            </div>
-            <div class="row tight-row">
-                <div class="col">
-                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                        <video class="video" width=100% loop playsinline autoplay muted
-                            src="./static/videos/quant/s10_torusmedium_inspect_1.mp4" onplay="resizeAndPlay(this)"></video>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                        <video class="video" width=100% loop playsinline autoplay muted
-                            src="./static/videos/quant/s9_cubemedium_pass_1.mp4" onplay="resizeAndPlay(this)"></video>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                        <video class="video" width=100% loop playsinline autoplay muted
-                            src="./static/videos/quant/s9_cubesmall_inspect_1.mp4" onplay="resizeAndPlay(this)"></video>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                        <video class="video" width=100% loop playsinline autoplay muted
-                            src="./static/videos/quant/s10_waterbottle_pass_1.mp4" onplay="resizeAndPlay(this)"></video>
+                        <video class="video" width="784" height="576" loop playsinline data-autoplay controls preload="none" muted
+                            src="./static/videos/quant/s7_spheremedium_pass_1.mp4"></video>
                     </div>
                 </div>
             </div>
             <div class="row tight-row">
                 <div class="col">
                     <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                        <video class="video" width=100% loop playsinline autoplay muted
-                            src="./static/videos/quant/s9_lightbulb_pass_1.mp4" onplay="resizeAndPlay(this)"></video>
+                        <video class="video" width="784" height="576" loop playsinline data-autoplay controls preload="none" muted
+                            src="./static/videos/quant/s10_torusmedium_inspect_1.mp4"></video>
                     </div>
                 </div>
                 <div class="col">
                     <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                        <video class="video" width=100% loop playsinline autoplay muted
-                            src="./static/videos/quant/s10_headphones_pass_1.mp4" onplay="resizeAndPlay(this)"></video>
+                        <video class="video" width="784" height="576" loop playsinline data-autoplay controls preload="none" muted
+                            src="./static/videos/quant/s9_cubemedium_pass_1.mp4"></video>
                     </div>
                 </div>
                 <div class="col">
                     <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                        <video class="video" width=100% loop playsinline autoplay muted
-                            src="./static/videos/quant/s10_spheremedium_inspect_1.mp4" onplay="resizeAndPlay(this)"></video>
+                        <video class="video" width="784" height="576" loop playsinline data-autoplay controls preload="none" muted
+                            src="./static/videos/quant/s9_cubesmall_inspect_1.mp4"></video>
                     </div>
                 </div>
                 <div class="col">
                     <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                        <video class="video" width=100% loop playsinline autoplay muted
-                            src="./static/videos/quant/s10_spheremedium_pass_1.mp4" onplay="resizeAndPlay(this)"></video>
+                        <video class="video" width="784" height="576" loop playsinline data-autoplay controls preload="none" muted
+                            src="./static/videos/quant/s10_waterbottle_pass_1.mp4"></video>
+                    </div>
+                </div>
+            </div>
+            <div class="row tight-row">
+                <div class="col">
+                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
+                        <video class="video" width="784" height="576" loop playsinline data-autoplay controls preload="none" muted
+                            src="./static/videos/quant/s9_lightbulb_pass_1.mp4"></video>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
+                        <video class="video" width="784" height="576" loop playsinline data-autoplay controls preload="none" muted
+                            src="./static/videos/quant/s10_headphones_pass_1.mp4"></video>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
+                        <video class="video" width="784" height="576" loop playsinline data-autoplay controls preload="none" muted
+                            src="./static/videos/quant/s10_spheremedium_inspect_1.mp4"></video>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
+                        <video class="video" width="784" height="576" loop playsinline data-autoplay controls preload="none" muted
+                            src="./static/videos/quant/s10_spheremedium_pass_1.mp4"></video>
                     </div>
                 </div>
             </div>
@@ -526,14 +525,14 @@ We further validate the effectiveness of DeVI in multi-object scenes and text-dr
                     <div class="row tight-row">
                         <div class="col">
                             <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                                <video class="video" width=100% loop playsinline autoplay muted
-                                    src="./static/videos/locomanip/sub1_plasticbox_000.mp4" onplay="resizeAndPlay(this)"></video>
+                                <video class="video" width="3136" height="2304" loop playsinline data-autoplay controls preload="none" muted
+                                    src="./static/videos/locomanip/sub1_plasticbox_000.mp4"></video>
                             </div>
                         </div>
                         <div class="col">
                             <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                                <video class="video" width=100% loop playsinline autoplay muted
-                                    src="./static/videos/locomanip/sub1_tripod_000.mp4" onplay="resizeAndPlay(this)"></video>
+                                <video class="video" width="3136" height="2304" loop playsinline data-autoplay controls preload="none" muted
+                                    src="./static/videos/locomanip/sub1_tripod_000.mp4"></video>
                             </div>
                         </div>
                     </div>
@@ -549,8 +548,8 @@ We further validate the effectiveness of DeVI in multi-object scenes and text-dr
                         </div>
                         <div class="col">
                             <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                                <video class="video" width=100% loop playsinline autoplay muted
-                                    src="./static/videos/scene/scene_0.mp4" onplay="resizeAndPlay(this)"></video>
+                                <video class="video" width="1896" height="1896" loop playsinline data-autoplay controls preload="none" muted
+                                    src="./static/videos/scene/scene_0.mp4"></video>
                             </div>
                         </div>
                     </div>

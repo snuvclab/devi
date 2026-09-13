@@ -27,6 +27,12 @@ body {
   font-family: 'Google Sans', sans-serif;
 }
 
+/* Reserve each clip's aspect ratio before its metadata is loaded. */
+video[data-autoplay] {
+  width: 100%;
+  height: auto;
+}
+
 
 .publication-title {}
 

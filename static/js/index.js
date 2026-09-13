@@ -39,9 +39,9 @@ document.addEventListener('DOMContentLoaded', function () {
     var followers = vids.filter(function (v) { return v !== leader; });
 
     setInterval(function () {
-      if (leader.readyState < 2 || leader.paused) return;
+      if (document.hidden || leader.readyState < 2 || leader.paused) return;
       followers.forEach(function (f) {
-        if (f.readyState < 2 || f.seeking) return;
+        if (f.readyState < 2 || f.paused || f.seeking) return;
         if (Math.abs(f.currentTime - leader.currentTime) > 0.08) {
           f.currentTime = leader.currentTime;
         }
