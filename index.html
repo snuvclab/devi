@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -39,17 +39,6 @@
     <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
     <link rel="stylesheet" href="static/css/index.css">
-    <style>
-        .tight-row { margin-left: -4px; margin-right: -4px; }
-        .tight-row > [class*="col"] { padding-left: 4px; padding-right: 4px; }
-        .tight-row .video-compare-container { margin-bottom: 4px !important; }
-        /* Trim the side margins of a clip without changing how wide it is shown.
-           --keep is the fraction of the original frame width left visible. */
-        .crop-x { --keep: 0.70; overflow: hidden; }
-        .crop-x > video { width: calc(100% / var(--keep)); margin-left: calc(-50% * (1 / var(--keep) - 1)); max-width: none; }
-        .tldr-label { font-size: 1.1em; font-weight: 700 !important; }
-        .tldr-text { font-size: 0.92em; font-weight: 700 !important; }
-    </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
     <script defer src="static/js/fontawesome.all.min.js"></script>
@@ -62,13 +51,14 @@
 <body>
 
 
-    <section class="hero">
+    <header class="hero publication-header">
         <div class="hero-body">
             <div class="container is-max-desktop">
                 <div class="columns is-centered">
                     <div class="column has-text-centered">
-                        <h1 class="title is-1 publication-title" style="font-size: 2.5rem;"> 
-                            <img src="static/images/icon.png" alt="DeVI icon" style="height: 1em; vertical-align: -0.15em; margin-right: 0.25em;"><span style="color: #f2c94c;">DeVI</span>: Physics-based <span style="color: #f2c94c;">De</span>xterous Human-Object <br> Interaction via Synthetic <span style="color: #f2c94c;">V</span>ideo <span style="color: #f2c94c;">I</span>mitation
+                        <p class="publication-venue">Preprint</p>
+                        <h1 class="title is-1 publication-title">
+                            <img src="static/images/icon.png" alt="" class="publication-icon"><span class="title-accent">DeVI</span>: Physics-based <span class="title-accent">De</span>xterous Human-Object Interaction via Synthetic <span class="title-accent">V</span>ideo <span class="title-accent">I</span>mitation
                         </h1>
                         <div class="is-size-5 publication-authors">
                             <!-- Paper authors -->
@@ -86,12 +76,8 @@
                             </span>
                         </div>
 
-                        <div class="is-size-5 publication-authors">
+                        <div class="publication-affiliations">
                             <span class="author-block">Seoul National University<sup>1</sup>, RLWRLD<sup>2</sup></span>
-                        </div>
-                        <div class="columns is-centered">
-                            <div class="is-size-4 publication-venue has-text-centered" style="margin-left: auto; margin-right: auto;">Preprint
-                            </div>
                         </div>
 
                         <div class="column has-text-centered">
@@ -134,65 +120,111 @@
                 </div>
             </div>
         </div>
-    </section>
+    </header>
 
 
+    <main>
     <section class="hero teaser">
         <div class="container is-max-desktop">
-            <div class="hero-image">
+            <div class="hero-image media-frameless">
                 <video width="1920" height="486" data-autoplay controls preload="auto" loop muted playsinline>
                     <source src="static/videos/main/teaser_v2.mp4" type="video/mp4">
                 </video>
             </div>
-            <h2 class="subtitle has-text-centered" style="margin-bottom: 1.5rem;">
+            <p class="teaser-caption">
                 <span class="tldr-label">TL;DR:</span>
-                <span class="tldr-text">Physics-based character control with dexterous HOI <br/> via Synthetic Video Imitation</span>
-            </h2>
+                <span class="tldr-text">Physics-based character control with dexterous HOI via Synthetic Video Imitation</span>
+            </p>
         </div>
 
     </section>
 
-    <section class="hero is-light">
+    <section class="hero paper-section abstract-section" aria-labelledby="abstract-title">
+        <div class="hero-body">
         <div class="container is-max-desktop">
             <div class="columns is-centered has-text-centered">
-                <div class="column is-four-fifths">
-                    <br>
-                    <h2 class="title is-3">Abstract</h2>
-                    <div class="content has-text-justified">
+                <div class="column">
+                    <h2 id="abstract-title" class="title is-3 section-title">Abstract</h2>
+                    <div class="content abstract-copy">
                         <p>
-                            Recent advances in video generative models enable the synthesis of realistic human-object interaction videos across a wide range of scenarios and object categories, including complex dexterous manipulations that are difficult to capture with motion capture systems. While the rich interaction knowledge embedded in these synthetic videos holds strong potential for motion planning in dexterous robotic manipulation, their limited physical fidelity and purely 2D nature make them difficult to use directly as imitation targets in physics-based character control.
-We present DeVI (Dexterous Video Imitation), a novel framework that leverages text-conditioned synthetic videos to enable physically plausible dexterous agent control for interacting with unseen target objects.
-To overcome the imprecision of generative 2D cues, we introduce a hybrid tracking reward that integrates 3D human tracking with robust 2D object tracking.
-Unlike methods relying on high-quality 3D kinematic demonstrations, DeVI requires only the generated video, enabling zero-shot generalization across diverse objects and interaction types.  
-Extensive experiments demonstrate that DeVI outperforms existing approaches that imitate 3D human-object interaction demonstrations, particularly in modeling dexterous hand-object interactions.
-We further validate the effectiveness of DeVI in multi-object scenes and text-driven action diversity, showcasing the advantage of using video as an HOI-aware motion planner.
+                            Recent advances in video generative models enable the synthesis of realistic Human-Object Interaction (HOI) videos across diverse scenarios and object categories, including complex dexterous manipulations that are difficult to capture using motion capture systems.
+                            While these synthetic videos offer rich knowledge of how people grasp and use objects, inaccurate object pose estimates and severe hand-object misalignment make them difficult to use for physics-based character control.
+                            We present <strong>DeVI</strong> (Dexterous Video Imitation), a novel framework that learns physics-based character control for dexterous HOI by imitating text-conditioned synthetic videos.
+                            To train a control policy from these videos, we introduce hybrid imitation targets that combine reconstructed 3D human motion with tracked 2D object trajectories.
+                            This formulation avoids explicit 3D object motion reconstruction that remains unreliable for dexterous interactions in synthetic videos.
+                            Additionally, our Visual HOI Alignment corrects misalignment of the human reference with the generated video and the initial object geometry, making the reference suitable for physical interaction with the object.
+                            Extensive experiments on synthetic video imitation show that DeVI's hybrid representation is more effective than those used by the baselines.
+                            Even when 3D HOI motion-capture data are provided as references, DeVI outperforms the baselines in imitating dexterous interactions.
+                            We further highlight the advantages of synthetic video imitation by showing text-controlled functional manipulation, target-aware interactions, and articulated object manipulation without requiring motion-capture demonstrations.
                         </p>
-                        <br>
                     </div>
                 </div>
             </div>
         </div>
+        </div>
     </section>
 
     <!-- Method Overview -->
-    <section class="hero is-small">
+    <section class="hero paper-section" aria-labelledby="method-title">
         <div class="hero-body">
             <div class="container is-max-desktop">
-                <h2 class="title is-3 has-text-centered">Method Overview</h2>
-                <img src="static/images/overview.png" alt="Random Image" id="tree" height="100%">
-                </br>
-                </br>
-                <h2 class="subtitle has-text-centered">
+                <h2 id="method-title" class="title is-3 has-text-centered section-title">Method Overview</h2>
+                <img class="method-image" src="static/images/overview.png" alt="DeVI pipeline: HOI video generation, hybrid imitation target extraction, and humanoid control policy learning" id="tree" width="4037" height="1965" loading="lazy" decoding="async">
+                <p class="method-copy">
                     Our method consists of three parts; <b>(1) 2D HOI Video Generation</b>,
                     <b>(2) Extracting Hybrid Imitation Target from the Video</b>, and 
                     <b>(3) Learning Humanoid Control Policy</b>.
                     First, we generate 2D HOI Video from the rendered 3D scene using the pre-trained image-to-video diffusion model.
                     Then, the Hybrid Imitation Target which includes 3D human reference and 2D object reference is extracted from the video.
                     Using the hybrid imitation target, we learn humanoid control policy imitating the dexterous HOI video via our hybrid tracking reward.
-                </h2>
+                </p>
             </div>
         </div>
     </section>
+
+    <section class="hero paper-section key-takeaways" aria-labelledby="key-takeaways-title">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <h2 id="key-takeaways-title" class="title is-3 has-text-centered section-title">Key Takeaways</h2>
+                <article class="takeaway" aria-labelledby="hybrid-imitation-target-title">
+                    <h3 id="hybrid-imitation-target-title" class="title is-4 takeaway-heading">
+                        <span class="takeaway-number" aria-hidden="true">1</span>
+                        <span>Hybrid Imitation Target</span>
+                    </h3>
+                    <figure class="takeaway-figure">
+                        <a href="static/images/comparison.png" target="_blank" rel="noopener"
+                            aria-label="Open the full-resolution imitation target comparison">
+                            <img src="static/images/comparison.png" width="4096" height="1963"
+                                alt="Comparison of policies trained with RigVid, DAViD, Dex4D, and DeVI imitation targets across five dexterous human-object interactions"
+                                loading="lazy" decoding="async">
+                        </a>
+                        <figcaption>
+                            <strong>The hybrid imitation target enables more effective dexterous HOI policy learning.</strong>
+                            The hybrid imitation target is a novel representation that combines reconstructed 3D human motion with 2D object tracks from a generated HOI video. This formulation bypasses explicit 3D object trajectory reconstruction, which is used by baselines (e.g., RIGVid, DAViD, Dex4D) but remains unreliable (especially spatio-temporal hand-object misalignement) for dexterous manipulation.
+                        </figcaption>
+                    </figure>
+                </article>
+                <article class="takeaway" aria-labelledby="visual-hoi-title">
+                    <h3 id="visual-hoi-title" class="title is-4 takeaway-heading">
+                        <span class="takeaway-number" aria-hidden="true">2</span>
+                        <span>Visual HOI Alignment</span>
+                    </h3>
+                    <figure class="takeaway-figure">
+                        <video class="video" width="1920" height="644" loop playsinline data-autoplay controls preload="none" muted
+                            aria-label="Visual HOI alignment comparison: GVHMR, without visual HOI alignment, and DeVI in reference and novel views"
+                            aria-describedby="visual-hoi-caption" src="static/videos/visual_hoi.mp4">
+                            <a href="static/videos/visual_hoi.mp4">Watch the Visual HOI Alignment comparison.</a>
+                        </video>
+                        <figcaption id="visual-hoi-caption">
+                            <strong>Visual HOI alignment produces human motion suitable for physical interaction.</strong>
+                            Visual HOI alignment refines human motion to align with both the generated video and the initial 3D object, allowing the human motion to be suitable for interaction.
+                        </figcaption>
+                    </figure>
+                </article>
+            </div>
+        </div>
+    </section>
+
     <!-- Video -->
     <!-- <section class="hero is-small is-light">
         <div class="hero-body">
@@ -210,375 +242,251 @@ We further validate the effectiveness of DeVI in multi-object scenes and text-dr
         </div>
     </section> -->
 
-    <section class="hero is-small"></section>
-    <div class="hero-body">
-        <!-- <div class="container"> -->
-        <div class="container is-max-desktop content">
-            <h2 class="title is-3 has-text-centered">Results</h2>
-            <br />
-            <h4 align="left" class="title is-4">Various Simulated HOIs </h4>
-            <div class="row tight-row">
-                <div class="col">
-                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                        <video class="video" width="960" height="960" loop playsinline data-autoplay controls preload="none" muted
-                            src="./static/videos/main/web/trophy.mp4"></video>
+    <section class="hero paper-section results-section" aria-labelledby="results-title">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <h2 id="results-title" class="title is-3 has-text-centered section-title">Results</h2>
+                <section class="result-group" aria-labelledby="result-1-title">
+                    <h3 id="result-1-title" class="result-heading">Various Simulated HOIs</h3>
+                    <div class="result-grid">
+                        <figure class="media-tile">
+                            <div class="media-frame media-frameless">
+                                <video class="video" width="960" height="960" loop playsinline data-autoplay controls preload="none" muted src="./static/videos/main/web/trophy.mp4"></video>
+                            </div>
+                            <figcaption>Trophy</figcaption>
+                        </figure>
+                        <figure class="media-tile">
+                            <div class="media-frame media-frameless">
+                                <video class="video" width="960" height="960" loop playsinline data-autoplay controls preload="none" muted src="./static/videos/main/web/camera.mp4"></video>
+                            </div>
+                            <figcaption>Camera</figcaption>
+                        </figure>
+                        <figure class="media-tile">
+                            <div class="media-frame media-frameless">
+                                <video class="video" width="960" height="960" loop playsinline data-autoplay controls preload="none" muted src="./static/videos/main/web/coke.mp4"></video>
+                            </div>
+                            <figcaption>Coke</figcaption>
+                        </figure>
+                        <figure class="media-tile">
+                            <div class="media-frame media-frameless">
+                                <video class="video" width="960" height="960" loop playsinline data-autoplay controls preload="none" muted src="./static/videos/main/web/apple.mp4"></video>
+                            </div>
+                            <figcaption>Apple</figcaption>
+                        </figure>
+                        <figure class="media-tile">
+                            <div class="media-frame media-frameless">
+                                <video class="video" width="960" height="960" loop playsinline data-autoplay controls preload="none" muted src="./static/videos/main/web/wok.mp4"></video>
+                            </div>
+                            <figcaption>Wok</figcaption>
+                        </figure>
+                        <figure class="media-tile">
+                            <div class="media-frame media-frameless">
+                                <video class="video" width="960" height="960" loop playsinline data-autoplay controls preload="none" muted src="./static/videos/main/web/garbage.mp4"></video>
+                            </div>
+                            <figcaption>Garbage</figcaption>
+                        </figure>
+                        <figure class="media-tile">
+                            <div class="media-frame media-frameless">
+                                <video class="video" width="960" height="960" loop playsinline data-autoplay controls preload="none" muted src="./static/videos/main/web/pot.mp4"></video>
+                            </div>
+                            <figcaption>Pot</figcaption>
+                        </figure>
+                        <figure class="media-tile">
+                            <div class="media-frame media-frameless">
+                                <video class="video" width="960" height="960" loop playsinline data-autoplay controls preload="none" muted src="./static/videos/main/web/cactus.mp4"></video>
+                            </div>
+                            <figcaption>Potted Plant</figcaption>
+                        </figure>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                        <video class="video" width="960" height="960" loop playsinline data-autoplay controls preload="none" muted
-                            src="./static/videos/main/web/camera.mp4"></video>
+                </section>
+                <section class="result-group" aria-labelledby="result-2-title">
+                    <h3 id="result-2-title" class="result-heading">Target Awareness &amp; Text Controllability</h3>
+                    <div class="result-grid prompt-grid">
+                        <figure class="media-tile">
+                            <div class="media-frame media-frameless">
+                                <video class="video" width="960" height="872" loop playsinline data-autoplay controls preload="none" muted src="./static/videos/main/web/lid.mp4"></video>
+                            </div>
+                            <figcaption>"Lifts a pot lid with right hand and places it onto the pot to close it"</figcaption>
+                        </figure>
+                        <figure class="media-tile">
+                            <div class="media-frame media-frameless">
+                                <video class="video" width="960" height="872" loop playsinline data-autoplay controls preload="none" muted src="./static/videos/main/web/fryingpan.mp4"></video>
+                            </div>
+                            <figcaption>"Lifts a frying pan with right hand and places it onto the induction"</figcaption>
+                        </figure>
+                        <figure class="media-tile">
+                            <div class="media-frame media-frameless">
+                                <video class="video" width="960" height="872" loop playsinline data-autoplay controls preload="none" muted src="./static/videos/main/web/apple_text.mp4"></video>
+                            </div>
+                            <figcaption>"Picks up an apple with left hand and places into a brown basket"</figcaption>
+                        </figure>
+                        <figure class="media-tile">
+                            <div class="media-frame media-frameless">
+                                <video class="video" width="960" height="872" loop playsinline data-autoplay controls preload="none" muted src="./static/videos/main/web/tomato.mp4"></video>
+                            </div>
+                            <figcaption>"Picks up a tomato with right hand and places into a brown basket"</figcaption>
+                        </figure>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                        <video class="video" width="960" height="960" loop playsinline data-autoplay controls preload="none" muted
-                            src="./static/videos/main/web/coke.mp4"></video>
+                </section>
+                <section class="result-group" aria-labelledby="result-3-title">
+                    <h3 id="result-3-title" class="result-heading">Visualization of Hybrid Imitation Target</h3>
+                    <div class="media-frame media-wide media-frameless">
+                        <video class="video" width="1920" height="1044" loop playsinline data-autoplay controls preload="none" muted src="./static/videos/grid.mp4"></video>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                        <video class="video" width="960" height="960" loop playsinline data-autoplay controls preload="none" muted
-                            src="./static/videos/main/web/apple.mp4"></video>
+                </section>
+                <section class="result-group" aria-labelledby="result-4-title">
+                    <h3 id="result-4-title" class="result-heading">Zero-Shot Cross-Object Policy Transfer</h3>
+                    <div class="media-frame media-wide media-frameless">
+                        <video class="video" width="1840" height="984" loop playsinline data-autoplay controls preload="none" muted src="./static/videos/transfer.mp4"></video>
                     </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <p class="has-text-centered"> Trophy
-                    </p>
-                </div>
-                <div class="col">
-                    <p class="has-text-centered"> Camera </p>
-                </div>
-                <div class="col">
-                    <p class="has-text-centered"> Coke</p>
-                </div>
-                <div class="col">
-                    <p class="has-text-centered"> Apple</p>
-                </div>
-            </div>
-
-            <div class="row tight-row">
-                <div class="col">
-                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                        <video class="video" width="960" height="960" loop playsinline data-autoplay controls preload="none" muted
-                            src="./static/videos/main/web/wok.mp4"></video>
-                    </div>
-                </div> 
-                <div class="col">
-                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                        <video class="video" width="960" height="960" loop playsinline data-autoplay controls preload="none" muted
-                            src="./static/videos/main/web/garbage.mp4"></video>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                        <video class="video" width="960" height="960" loop playsinline data-autoplay controls preload="none" muted
-                            src="./static/videos/main/web/pot.mp4"></video>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                        <video class="video" width="960" height="960" loop playsinline data-autoplay controls preload="none" muted
-                            src="./static/videos/main/web/cactus.mp4"></video>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <p class="has-text-centered"> Wok</p>
-                </div>
-                <div class="col">
-                    <p class="has-text-centered"> Garbage </p>
-                </div>
-                <div class="col">
-                    <p class="has-text-centered"> Pot</p>
-                </div>
-                <div class="col">
-                    <p class="has-text-centered"> Potted Plant </p>
-                </div>
-            </div>
-            <br />
-            <br />
-            <!-- <h4 align="left" class="title is-4">Target Awareness </h4>
-            <div class="row">
-                <div class="col">
-                    <div class="video-compare-container" style="width: 50%"> 
-                        <video class="video" width=100% id="stool_hoi" loop playsinline autoplay muted
-                            src="./static/videos/main/lid.mp4" onplay="resizeAndPlay(this)"></video>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="video-compare-container" style="width: 50%">
-                        <video class="video" width=100% id="stool_hoi" loop playsinline autoplay muted
-                            src="./static/videos/main/fryingpan.mp4" onplay="resizeAndPlay(this)"></video>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <p class="has-text-centered">A person jumps, &lt;umbrella&gt;
-                    </p>
-                </div>
-                <div class="col">
-                    <p class="has-text-centered">A person walks, &lt;suitcase&gt;</p>
-                </div>
-            </div>
-            <br />
-            <br /> -->
-            <h4 align="left" class="title is-4">Target Awareness & Text Controllability </h4>
-            <div class="row tight-row">
-                <div class="col">
-                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; "> 
-                        <video class="video" width="960" height="872" loop playsinline data-autoplay controls preload="none" muted
-                            src="./static/videos/main/web/lid.mp4"></video>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                        <video class="video" width="960" height="872" loop playsinline data-autoplay controls preload="none" muted
-                            src="./static/videos/main/web/fryingpan.mp4"></video>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                        <video class="video" width="960" height="872" loop playsinline data-autoplay controls preload="none" muted
-                            src="./static/videos/main/web/apple_text.mp4"></video>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; "> 
-                        <video class="video" width="960" height="872" loop playsinline data-autoplay controls preload="none" muted
-                            src="./static/videos/main/web/tomato.mp4"></video>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <p class="has-text-centered" style="font-size: 12px;">"Lifts a pot lid with right hand and places it onto the pot to close it"
-                    </p>
-                </div>
-                <div class="col">
-                    <p class="has-text-centered" style="font-size: 12px;">"Lifts a frying pan with right hand and places it onto the induction"
-                    </p>
-                </div>
-                <div class="col">
-                    <p class="has-text-centered" style="font-size: 12px;">"Picks up an apple with left hand and places into a brown basket"
-                    </p>
-                </div>
-                <div class="col">
-                    <p class="has-text-centered" style="font-size: 12px;">"Picks up a tomato with right hand and places into a brown basket"
-                </div>
-            </div>
-            <br />
-            <br />
-            <h4 align="left" class="title is-4">Synthetic Imitation Target </h4>
-            <div class="row">
-                <div class="col">
-                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                        <video class="video" width="1920" height="1044" loop playsinline data-autoplay controls preload="none" muted
-                            src="./static/videos/grid.mp4"></video>
-                    </div>
-                </div>
-            </div>
-            <br />
-            <br />
-            <h4 align="left" class="title is-4">Zero-Shot Cross-Object Policy Transfer </h4>
-            <div class="row">
-                <div class="col">
-                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                        <video class="video" width="1840" height="984" loop playsinline data-autoplay controls preload="none" muted
-                            src="./static/videos/transfer.mp4"></video>
-                    </div>
-                </div>
-            </div>
-            <br />
-            <br />
-            <h4 align="left" class="title is-4">Egocentric Video w/ Articulated Object Manipulation </h4>
-            <div style="display: flex; align-items: stretch; gap: 12px;">
-                <div style="flex: 1; min-width: 0;">
-                    <div class="row tight-row" style="align-items: center;">
-                        <div class="col">
-                            <div class="video-compare-container crop-x" style="width: 100%; margin-bottom: 8px; ">
-                                <video class="video" width="1024" height="576" loop playsinline data-autoplay controls preload="none" muted data-sync="microwave"
-                                    src="./static/videos/articulated/microwave_video.mp4"></video>
+                </section>
+                <section class="result-group" aria-labelledby="result-5-title">
+                    <h3 id="result-5-title" class="result-heading">Egocentric Video w/ Articulated Object Manipulation</h3>
+                    <div class="result-pairs">
+                        <div class="result-pair">
+                            <div class="comparison-grid">
+                                <figure class="media-tile">
+                                    <div class="media-frame crop-x">
+                                        <video class="video" width="1024" height="576" loop playsinline data-autoplay controls preload="none" muted data-sync="microwave" src="./static/videos/articulated/microwave_video.mp4"></video>
+                                    </div>
+                                    <figcaption>Generated Egocentric Video</figcaption>
+                                </figure>
+                                <figure class="media-tile">
+                                    <div class="media-frame crop-x">
+                                        <video class="video" width="1024" height="576" loop playsinline data-autoplay controls preload="none" muted data-sync="microwave" data-sync-lead src="./static/videos/articulated/microwave_sim.mp4"></video>
+                                    </div>
+                                    <figcaption>Dexterous HOI Simulation</figcaption>
+                                </figure>
                             </div>
                         </div>
-                        <div class="col">
-                            <div class="video-compare-container crop-x" style="width: 100%; margin-bottom: 8px; ">
-                                <video class="video" width="1024" height="576" loop playsinline data-autoplay controls preload="none" muted data-sync="microwave" data-sync-lead
-                                    src="./static/videos/articulated/microwave_sim.mp4"></video>
+                        <div class="result-pair">
+                            <div class="comparison-grid">
+                                <figure class="media-tile">
+                                    <div class="media-frame crop-x">
+                                        <video class="video" width="1024" height="576" loop playsinline data-autoplay controls preload="none" muted data-sync="washingmachine" src="./static/videos/articulated/washingmachine_video.mp4"></video>
+                                    </div>
+                                    <figcaption>Generated Egocentric Video</figcaption>
+                                </figure>
+                                <figure class="media-tile">
+                                    <div class="media-frame crop-x">
+                                        <video class="video" width="1024" height="576" loop playsinline data-autoplay controls preload="none" muted data-sync="washingmachine" data-sync-lead src="./static/videos/articulated/washingmachine_sim.mp4"></video>
+                                    </div>
+                                    <figcaption>Dexterous HOI Simulation</figcaption>
+                                </figure>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col">
-                            <p class="has-text-centered"> Generated Egocentric Video</p>
-                        </div>
-                        <div class="col">
-                            <p class="has-text-centered"> Dexterous HOI Simulation</p>
-                        </div>
-                    </div>
-                </div>
-                <div style="width: 1px; background: #ccc; align-self: stretch;"></div>
-                <div style="flex: 1; min-width: 0;">
-                    <div class="row tight-row" style="align-items: center;">
-                        <div class="col">
-                            <div class="video-compare-container crop-x" style="width: 100%; margin-bottom: 8px; ">
-                                <video class="video" width="1024" height="576" loop playsinline data-autoplay controls preload="none" muted data-sync="washingmachine"
-                                    src="./static/videos/articulated/washingmachine_video.mp4"></video>
+                </section>
+                <section class="result-group" aria-labelledby="result-6-title">
+                    <h3 id="result-6-title" class="result-heading">DeVI on GRAB dataset</h3>
+                    <div class="result-grid">
+                        <figure class="media-tile">
+                            <div class="media-frame">
+                                <video class="video" width="784" height="576" loop playsinline data-autoplay controls preload="none" muted src="./static/videos/quant/s4_mouse_pass_1.mp4"></video>
                             </div>
-                        </div>
-                        <div class="col">
-                            <div class="video-compare-container crop-x" style="width: 100%; margin-bottom: 8px; ">
-                                <video class="video" width="1024" height="576" loop playsinline data-autoplay controls preload="none" muted data-sync="washingmachine" data-sync-lead
-                                    src="./static/videos/articulated/washingmachine_sim.mp4"></video>
+                        </figure>
+                        <figure class="media-tile">
+                            <div class="media-frame">
+                                <video class="video" width="784" height="576" loop playsinline data-autoplay controls preload="none" muted src="./static/videos/quant/s5_toothpaste_pass_1.mp4"></video>
                             </div>
+                        </figure>
+                        <figure class="media-tile">
+                            <div class="media-frame">
+                                <video class="video" width="784" height="576" loop playsinline data-autoplay controls preload="none" muted src="./static/videos/quant/s7_lightbulb_pass_1.mp4"></video>
+                            </div>
+                        </figure>
+                        <figure class="media-tile">
+                            <div class="media-frame">
+                                <video class="video" width="784" height="576" loop playsinline data-autoplay controls preload="none" muted src="./static/videos/quant/s7_spheremedium_pass_1.mp4"></video>
+                            </div>
+                        </figure>
+                        <figure class="media-tile">
+                            <div class="media-frame">
+                                <video class="video" width="784" height="576" loop playsinline data-autoplay controls preload="none" muted src="./static/videos/quant/s10_torusmedium_inspect_1.mp4"></video>
+                            </div>
+                        </figure>
+                        <figure class="media-tile">
+                            <div class="media-frame">
+                                <video class="video" width="784" height="576" loop playsinline data-autoplay controls preload="none" muted src="./static/videos/quant/s9_cubemedium_pass_1.mp4"></video>
+                            </div>
+                        </figure>
+                        <figure class="media-tile">
+                            <div class="media-frame">
+                                <video class="video" width="784" height="576" loop playsinline data-autoplay controls preload="none" muted src="./static/videos/quant/s9_cubesmall_inspect_1.mp4"></video>
+                            </div>
+                        </figure>
+                        <figure class="media-tile">
+                            <div class="media-frame">
+                                <video class="video" width="784" height="576" loop playsinline data-autoplay controls preload="none" muted src="./static/videos/quant/s10_waterbottle_pass_1.mp4"></video>
+                            </div>
+                        </figure>
+                        <figure class="media-tile">
+                            <div class="media-frame">
+                                <video class="video" width="784" height="576" loop playsinline data-autoplay controls preload="none" muted src="./static/videos/quant/s9_lightbulb_pass_1.mp4"></video>
+                            </div>
+                        </figure>
+                        <figure class="media-tile">
+                            <div class="media-frame">
+                                <video class="video" width="784" height="576" loop playsinline data-autoplay controls preload="none" muted src="./static/videos/quant/s10_headphones_pass_1.mp4"></video>
+                            </div>
+                        </figure>
+                        <figure class="media-tile">
+                            <div class="media-frame">
+                                <video class="video" width="784" height="576" loop playsinline data-autoplay controls preload="none" muted src="./static/videos/quant/s10_spheremedium_inspect_1.mp4"></video>
+                            </div>
+                        </figure>
+                        <figure class="media-tile">
+                            <div class="media-frame">
+                                <video class="video" width="784" height="576" loop playsinline data-autoplay controls preload="none" muted src="./static/videos/quant/s10_spheremedium_pass_1.mp4"></video>
+                            </div>
+                        </figure>
+                    </div>
+                </section>
+                <section class="result-group" aria-labelledby="result-7-title">
+                    <h3 id="result-7-title" class="result-heading">Additional Results</h3>
+                    <div class="result-pairs additional-pairs">
+                        <div class="result-pair">
+                            <div class="comparison-grid">
+                                <figure class="media-tile">
+                                    <div class="media-frame">
+                                        <video class="video" width="3136" height="2304" loop playsinline data-autoplay controls preload="none" muted src="./static/videos/locomanip/sub1_plasticbox_000.mp4"></video>
+                                    </div>
+                                </figure>
+                                <figure class="media-tile">
+                                    <div class="media-frame">
+                                        <video class="video" width="3136" height="2304" loop playsinline data-autoplay controls preload="none" muted src="./static/videos/locomanip/sub1_tripod_000.mp4"></video>
+                                    </div>
+                                </figure>
+                            </div>
+                            <p>Beyond the Table-top Scenarios</p>
+                        </div>
+                        <div class="result-pair">
+                            <div class="comparison-grid">
+                                <figure class="media-tile">
+                                    <div class="media-frame">
+                                        <img alt="Reconstructed 3D scene used for the interaction simulation" loading="lazy" src="./static/images/scene_0.png">
+                                    </div>
+                                </figure>
+                                <figure class="media-tile">
+                                    <div class="media-frame media-frameless">
+                                        <video class="video" width="1896" height="1896" loop playsinline data-autoplay controls preload="none" muted src="./static/videos/scene/scene_0.mp4"></video>
+                                    </div>
+                                </figure>
+                            </div>
+                            <p>DeVI on Reconstructed Scene</p>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col">
-                            <p class="has-text-centered"> Generated Egocentric Video</p>
-                        </div>
-                        <div class="col">
-                            <p class="has-text-centered"> Dexterous HOI Simulation</p>
-                        </div>
-                    </div>
-                </div>
+                </section>
             </div>
-            <br />
-            <br />
-            <h4 align="left" class="title is-4">DeVI on GRAB dataset </h4>
-            <div class="row tight-row">
-                <div class="col">
-                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                        <video class="video" width="784" height="576" loop playsinline data-autoplay controls preload="none" muted
-                            src="./static/videos/quant/s4_mouse_pass_1.mp4"></video>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                        <video class="video" width="784" height="576" loop playsinline data-autoplay controls preload="none" muted
-                            src="./static/videos/quant/s5_toothpaste_pass_1.mp4"></video>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                        <video class="video" width="784" height="576" loop playsinline data-autoplay controls preload="none" muted
-                            src="./static/videos/quant/s7_lightbulb_pass_1.mp4"></video>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                        <video class="video" width="784" height="576" loop playsinline data-autoplay controls preload="none" muted
-                            src="./static/videos/quant/s7_spheremedium_pass_1.mp4"></video>
-                    </div>
-                </div>
-            </div>
-            <div class="row tight-row">
-                <div class="col">
-                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                        <video class="video" width="784" height="576" loop playsinline data-autoplay controls preload="none" muted
-                            src="./static/videos/quant/s10_torusmedium_inspect_1.mp4"></video>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                        <video class="video" width="784" height="576" loop playsinline data-autoplay controls preload="none" muted
-                            src="./static/videos/quant/s9_cubemedium_pass_1.mp4"></video>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                        <video class="video" width="784" height="576" loop playsinline data-autoplay controls preload="none" muted
-                            src="./static/videos/quant/s9_cubesmall_inspect_1.mp4"></video>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                        <video class="video" width="784" height="576" loop playsinline data-autoplay controls preload="none" muted
-                            src="./static/videos/quant/s10_waterbottle_pass_1.mp4"></video>
-                    </div>
-                </div>
-            </div>
-            <div class="row tight-row">
-                <div class="col">
-                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                        <video class="video" width="784" height="576" loop playsinline data-autoplay controls preload="none" muted
-                            src="./static/videos/quant/s9_lightbulb_pass_1.mp4"></video>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                        <video class="video" width="784" height="576" loop playsinline data-autoplay controls preload="none" muted
-                            src="./static/videos/quant/s10_headphones_pass_1.mp4"></video>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                        <video class="video" width="784" height="576" loop playsinline data-autoplay controls preload="none" muted
-                            src="./static/videos/quant/s10_spheremedium_inspect_1.mp4"></video>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                        <video class="video" width="784" height="576" loop playsinline data-autoplay controls preload="none" muted
-                            src="./static/videos/quant/s10_spheremedium_pass_1.mp4"></video>
-                    </div>
-                </div>
-            </div>
-            <br />
-            <br />
-            <h4 align="left" class="title is-4">Additional Results </h4>
-            <div style="display: flex; align-items: stretch; gap: 12px;">
-                <div style="flex: 1.27; min-width: 0;">
-                    <div class="row tight-row">
-                        <div class="col">
-                            <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                                <video class="video" width="3136" height="2304" loop playsinline data-autoplay controls preload="none" muted
-                                    src="./static/videos/locomanip/sub1_plasticbox_000.mp4"></video>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                                <video class="video" width="3136" height="2304" loop playsinline data-autoplay controls preload="none" muted
-                                    src="./static/videos/locomanip/sub1_tripod_000.mp4"></video>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="has-text-centered">Beyond the Table-top Scenarios</p>
-                </div>
-                <div style="width: 1px; background: #ccc; align-self: stretch;"></div>
-                <div style="flex: 1; min-width: 0;">
-                    <div class="row tight-row" style="align-items: center;">
-                        <div class="col">
-                            <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                                <img src="./static/images/scene_0.png" style="width: 100%; display: block;">
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="video-compare-container" style="width: 100%; margin-bottom: 8px; ">
-                                <video class="video" width="1896" height="1896" loop playsinline data-autoplay controls preload="none" muted
-                                    src="./static/videos/scene/scene_0.mp4"></video>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="has-text-centered">DeVI on Reconstructed Scene</p>
-                </div>
-            </div>
-
         </div>
-    </div>
     </section>
 
 
     <!-- BibTeX -->
-    <section class="section" id="BibTeX">
+    <section class="section citation-section" id="BibTeX">
         <div class="container is-max-desktop content">
-            <h2 class="title">BibTeX</h2>
-            <pre><code>
-@misc{devi,
+            <h2 class="title is-3 section-title has-text-centered">BibTeX</h2>
+            <pre><code>@misc{devi,
     title={DeVI: Physics-based Dexterous Human-Object Interaction via Synthetic Video Imitation}, 
     author={Hyeonwoo Kim and Jeonghwan Kim and Kyungwon Cho and Hanbyul Joo},
     year={2026},
@@ -586,11 +494,11 @@ We further validate the effectiveness of DeVI in multi-object scenes and text-dr
     archivePrefix={arXiv},
     primaryClass={cs.CV},
     url={https://arxiv.org/abs/2604.20841}, 
-}
-            </code></pre>
+}</code></pre>
         </div>
     </section>
 
+    </main>
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
