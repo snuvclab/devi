@@ -38,14 +38,15 @@
     <link rel="stylesheet" href="static/css/bulma-slider.min.css">
     <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-    <link rel="stylesheet" href="static/css/index.css?v=3adfa2cfbfc7">
+    <link rel="stylesheet" href="static/css/index.css?v=f27881bd82e1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
     <script defer src="static/js/fontawesome.all.min.js"></script>
     <script src="static/js/bulma-carousel.min.js"></script>
     <script src="static/js/bulma-slider.min.js"></script>
     <script src="static/js/index.js"></script>
-    <script defer src="static/js/video-playback.js"></script>
+    <script defer src="static/js/video-playback.js?v=a3d4ed7b92de"></script>
+    <script defer src="static/js/video-carousel.js?v=787f041342fc"></script>
 </head>
 
 <body>
@@ -70,6 +71,9 @@
                             </span>
                             <span class="author-block">
                                 <a href="https://kyungwoncho.github.io/" target="_blank">Kyungwon Cho</a><sup>1</sup>,
+                            </span>
+                            <span class="author-block">
+                                <a href="https://junc0ng.github.io/" target="_blank">Junyoung Lee</a><sup>1</sup>,
                             </span>
                             <span class="author-block">
                                 <a href="https://jhugestar.github.io/" target="_blank">Hanbyul Joo</a><sup>1,2</sup>
@@ -334,16 +338,58 @@
                         </figure>
                         <figure class="media-tile">
                             <div class="media-frame media-frameless">
-                                <video class="video" width="960" height="872" loop playsinline data-autoplay controls preload="none" muted src="./static/videos/main/web/apple_text.mp4"></video>
+                                <video class="video" width="960" height="960" loop playsinline data-autoplay controls preload="none" muted src="./static/videos/main/web/apple_text.mp4"></video>
                             </div>
                             <figcaption>"Picks up an apple with left hand and places into a brown basket"</figcaption>
                         </figure>
                         <figure class="media-tile">
                             <div class="media-frame media-frameless">
-                                <video class="video" width="960" height="872" loop playsinline data-autoplay controls preload="none" muted src="./static/videos/main/web/tomato.mp4"></video>
+                                <video class="video" width="960" height="960" loop playsinline data-autoplay controls preload="none" muted src="./static/videos/main/web/tomato.mp4"></video>
                             </div>
                             <figcaption>"Picks up a tomato with right hand and places into a brown basket"</figcaption>
                         </figure>
+                    </div>
+                </section>
+                <section class="result-group" aria-labelledby="baseline-comparison-title">
+                    <div class="baseline-carousel" data-video-carousel role="region" aria-roledescription="carousel" aria-labelledby="baseline-comparison-title">
+                        <h3 id="baseline-comparison-title" class="result-heading">Comparison with Baselines</h3>
+                        <div class="baseline-carousel-stage">
+                            <div id="baseline-comparison-track" class="baseline-carousel-track" tabindex="0" aria-label="Baseline comparison videos. Use the left and right arrow keys to change slides.">
+                                <figure class="baseline-slide" role="group" aria-roledescription="slide" aria-label="1 of 3: Coke">
+                                    <video class="video" width="1920" height="960" loop playsinline data-autoplay controls preload="none" muted
+                                        aria-label="Coke: comparison with baseline methods" src="static/videos/comparison/coke.mp4">
+                                        <a href="static/videos/comparison/coke.mp4">Watch the Coke comparison.</a>
+                                    </video>
+                                </figure>
+                                <figure class="baseline-slide" role="group" aria-roledescription="slide" aria-label="2 of 3: Camera">
+                                    <video class="video" width="1920" height="960" loop playsinline data-autoplay controls preload="none" muted
+                                        aria-label="Camera: comparison with baseline methods" src="static/videos/comparison/camera.mp4">
+                                        <a href="static/videos/comparison/camera.mp4">Watch the Camera comparison.</a>
+                                    </video>
+                                </figure>
+                                <figure class="baseline-slide" role="group" aria-roledescription="slide" aria-label="3 of 3: Teapot">
+                                    <video class="video" width="1920" height="960" loop playsinline data-autoplay controls preload="none" muted
+                                        aria-label="Teapot: comparison with baseline methods" src="static/videos/comparison/teapot.mp4">
+                                        <a href="static/videos/comparison/teapot.mp4">Watch the Teapot comparison.</a>
+                                    </video>
+                                </figure>
+                            </div>
+                            <div class="baseline-carousel-navigation" data-carousel-controls role="group" aria-label="Comparison navigation" hidden>
+                                <button class="baseline-carousel-arrow" type="button" data-carousel-step="-1" aria-label="Previous comparison" aria-controls="baseline-comparison-track">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m14 6-6 6 6 6" /></svg>
+                                </button>
+                                <button class="baseline-carousel-arrow" type="button" data-carousel-step="1" aria-label="Next comparison" aria-controls="baseline-comparison-track">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m10 6 6 6-6 6" /></svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="baseline-carousel-controls" data-carousel-controls hidden>
+                            <div class="baseline-carousel-picker" role="group" aria-label="Choose a comparison">
+                                <button type="button" data-carousel-slide="0" aria-label="Show Coke comparison" aria-pressed="true" aria-controls="baseline-comparison-track"></button>
+                                <button type="button" data-carousel-slide="1" aria-label="Show Camera comparison" aria-pressed="false" aria-controls="baseline-comparison-track"></button>
+                                <button type="button" data-carousel-slide="2" aria-label="Show Teapot comparison" aria-pressed="false" aria-controls="baseline-comparison-track"></button>
+                            </div>
+                        </div>
                     </div>
                 </section>
                 <section class="result-group" aria-labelledby="result-3-title">

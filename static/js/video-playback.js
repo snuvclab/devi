@@ -25,22 +25,24 @@ document.addEventListener('DOMContentLoaded', function () {
   if ('IntersectionObserver' in window) {
     var preloadObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
+        // A neighboring carousel slide can touch the clip edge with zero area.
+        if (!entry.isIntersecting || entry.intersectionRatio < 0.01) return;
         entry.target.preload = 'auto';
         preloadObserver.unobserve(entry.target);
       });
-    }, { rootMargin: '300px 0px' });
+    }, { rootMargin: '300px 0px', threshold: 0.01 });
 
     var playbackObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
-        if (entry.isIntersecting && entry.intersectionRatio > 0) {
+        // Match the observer threshold so a clipped edge cannot keep playing.
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.01) {
           visible.add(entry.target);
         } else {
           visible.delete(entry.target);
         }
         updatePlayback(entry.target);
       });
-    }, { threshold: [0, 0.01] });
+    }, { threshold: 0.01 });
 
     videos.forEach(function (video) {
       video.controls = false;
